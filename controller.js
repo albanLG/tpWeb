@@ -26,6 +26,9 @@ function Pencil(ctx, drawing, canvas) {
 			this.currentShape=new Rectangle(dnd.DebutX,dnd.DebutY,0,0,this.currLineWidth,this.currColour);//dnd.DebutX,dnd.DebutY
 		}
 		drawing.addForm(this.currentShape);
+		
+		//on met a jour la liste
+		drawing.updateShapeList();
 	}
 	
 	Pencil.prototype.onInteractionUpdate= function(dnd){

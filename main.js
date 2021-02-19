@@ -23,4 +23,5 @@ ligne.paint(ctx);*/
 var drawing = new Drawing();
 var pencil = new Pencil(ctx, drawing, canvas);
 drawing.paint(ctx);
+drawing.updateShapeList();
 
