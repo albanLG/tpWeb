@@ -31,3 +31,7 @@ Forme.prototype.paint = function(ctx) {
     ctx.lineWidth = this.taille;
     ctx.strokeStyle = this.color;
 };
+
+Drawing.prototype.updateShapeList= function(){
+    //TODO
+}
