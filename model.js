@@ -14,10 +14,11 @@ function forme(t, c) {
     this.color=c;
 }
 
-function rectangle(coord, larg, haut){
+function rectangle(x, y, larg, haut){
   forme.call(this, taille, color);
 
-  this.coord = coord;
+  this.x = x;
+  this.y = y;
   this.larg = larg;
   this.haut = haut;
 }
