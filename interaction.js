@@ -12,9 +12,9 @@ function DnD(canvas, interactor) {
 	// Developper les 3 fonctions gérant les événements
 	DnD.prototype.selectionner= 
 	function(evt){
-		this.DebutX=evt.x;
-		this.DebutY=evt.y;
-		alert("selected");//a enlever
+		var mouspos=getMousePosition(canvas, evt);
+		this.DebutX=mouspos.x;
+		this.DebutY=mouspos.y;
 	}
 	function deplacer(evt){
 		
