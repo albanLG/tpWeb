@@ -2,7 +2,7 @@
 // Implémenter ici les fonctions paint à ajouter dans chacune des classes du modèle.
 Rectangle.prototype.paint = function(ctx) {
     //TODO Manager color
-    ctx.rect(this.getInitX(), this.getInitY(), this.getFinalX(),   this.getFinalY());
+    ctx.rect(this.x, this.y, this.getFinalX(),   this.getFinalY());
     ctx.stroke();
   };
   
