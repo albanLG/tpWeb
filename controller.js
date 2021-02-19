@@ -26,7 +26,7 @@ function Pencil(ctx, drawing, canvas) {
 		if(this.currEditingMode==editingMode.line){
 			drawing.formes[drawing.formes.length-1]=new Ligne(dnd.DebutX,dnd.DebutY,dnd.FinX,dnd.FinY,this.currLineWidth,this.currColour);
 		}else{
-			drawing.formes[drawing.formes.length-1]=new Rectangle(dnd.DebutX,dnd.DebutY,0,0,this.currLineWidth,this.currColour);//dnd.DebutX,dnd.DebutY
+			drawing.formes[drawing.formes.length-1]=new Rectangle(dnd.DebutX,dnd.DebutY,dnd.FinX-dnd.DebutX,dnd.FinY-dnd.DebutY,this.currLineWidth,this.currColour);//dnd.DebutX,dnd.DebutY
 		}
 		drawing.paint(ctx);
 	}
