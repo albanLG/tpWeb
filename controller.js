@@ -14,7 +14,6 @@ function Pencil(ctx, drawing, canvas) {
 
 	// Implémentez ici les 3 fonctions onInteractionStart, onInteractionUpdate et onInteractionEnd
 	Pencil.prototype.onInteractionStart= function(dnd){
-		alert(this.currLineWidth);
 		if(this.currEditingMode==editingMode.line){
 			this.currentShape=new Ligne(dnd.DebutX,dnd.DebutY,dnd.DebutX,dnd.DebutY,this.currLineWidth,this.currColour);
 		}else{
