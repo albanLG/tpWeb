@@ -16,11 +16,15 @@ function DnD(canvas, interactor) {
 		this.DebutX=mouspos.x;
 		this.DebutY=mouspos.y;
 	}
-	function deplacer(evt){
+	DnD.prototype.deplacer= 
+	function(evt){
 		
 	}
-	function lacher(evt){
-		
+	DnD.prototype.lacher= 
+	function(evt){
+		var mouspos=getMousePosition(canvas, evt);
+		this.FinX=mouspos.x;
+		this.FinY=mouspos.y;
 	}
 	// Associer les fonctions précédentes aux évènements du canvas.
 	canvas.addEventListener('mousedown', this.selectionner, false);
