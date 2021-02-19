@@ -1,15 +1,20 @@
 
 // La création d'un Dnd requière un canvas et un interacteur.
 // L'interacteur viendra dans un second temps donc ne vous en souciez pas au départ.
+
 function DnD(canvas, interactor) {
 	// Définir ici les attributs de la 'classe'
-	Element.setAttribute(DebutX, 0);
-	Element.setAttribute(DebutY, 0);
-	Element.setAttribute(FinX, 0);
-	Element.setAttribute(FinY, 0);
+	this.DebutX= 0;
+	this.DebutY=0;
+	this.FinX=0;
+	this.FinY=0;
+	
 	// Developper les 3 fonctions gérant les événements
-	function selectionner(evt){
-		const draggableElement = document.getElementById(evt);
+	DnD.prototype.selectionner= 
+	function(evt){
+		this.DebutX=evt.x;
+		this.DebutY=evt.y;
+		alert("selected");//a enlever
 	}
 	function deplacer(evt){
 		
@@ -18,6 +23,10 @@ function DnD(canvas, interactor) {
 		
 	}
 	// Associer les fonctions précédentes aux évènements du canvas.
+	canvas.addEventListener('mousedown', this.selectionner, false);
+	canvas.addEventListener('mousemove', this.deplacer, false);
+	canvas.addEventListener('mouseup', this.lacher, false);
+	
 };
 
 
