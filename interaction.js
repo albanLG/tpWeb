@@ -13,7 +13,7 @@ function DnD(canvas, interactor) {
 	// Developper les 3 fonctions gérant les événements
 	DnD.prototype.selectionner= 
 	function(evt){
-		isClicked=true;
+		this.isClicked=true;
 		var mouspos=getMousePosition(canvas, evt);
 		this.DebutX=mouspos.x;
 		this.DebutY=mouspos.y;
@@ -21,7 +21,7 @@ function DnD(canvas, interactor) {
 	}
 	DnD.prototype.deplacer= 
 	function(evt){
-		if(isClicked){
+		if(this.isClicked){
 			var mouspos=getMousePosition(canvas, evt);
 			this.FinX=mouspos.x;
 			this.FinY=mouspos.y;
@@ -30,7 +30,7 @@ function DnD(canvas, interactor) {
 	}
 	DnD.prototype.lacher= 
 	function(evt){
-		isClicked=false;
+		this.isClicked=false;
 		var mouspos=getMousePosition(canvas, evt);
 		this.FinX=mouspos.x;
 		this.FinY=mouspos.y;
