@@ -8,23 +8,33 @@ function DnD(canvas, interactor) {
 	this.DebutY=0;
 	this.FinX=0;
 	this.FinY=0;
+	this.isClicked=false;
 	
 	// Developper les 3 fonctions gérant les événements
 	DnD.prototype.selectionner= 
 	function(evt){
+		isClicked=true;
 		var mouspos=getMousePosition(canvas, evt);
 		this.DebutX=mouspos.x;
 		this.DebutY=mouspos.y;
+		interactor.onInteractionStart(this);
 	}
 	DnD.prototype.deplacer= 
 	function(evt){
-		
+		if(isClicked){
+			var mouspos=getMousePosition(canvas, evt);
+			this.FinX=mouspos.x;
+			this.FinY=mouspos.y;
+			interactor.onInteractionUpdate(this);
+		}
 	}
 	DnD.prototype.lacher= 
 	function(evt){
+		isClicked=false;
 		var mouspos=getMousePosition(canvas, evt);
 		this.FinX=mouspos.x;
 		this.FinY=mouspos.y;
+		interactor.onInteractionEnd(this);
 	}
 	// Associer les fonctions précédentes aux évènements du canvas.
 	canvas.addEventListener('mousedown', this.selectionner, false);

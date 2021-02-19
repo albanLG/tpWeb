@@ -28,7 +28,6 @@ Drawing.prototype.paint = function(ctx) {
 })};
 
 Forme.prototype.paint = function(ctx) {
-    alert(this.taille);
     ctx.lineWidth = this.taille;
     ctx.strokeStyle = this.color;
 };
