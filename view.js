@@ -21,8 +21,9 @@ Drawing.prototype.paint = function(ctx) {
     this.getForms().forEach(function (eltDuTableau) {
       // now fill the canvas
       eltDuTableau.paint(ctx);
-});
+})};
 
 forme.prototype.paint = function(ctx) {
-    
-}
+    ctx.lineWidth = this.taille;
+    ctx.strokeStyle = this.color;
+};
