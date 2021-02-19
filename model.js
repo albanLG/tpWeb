@@ -13,3 +13,20 @@ function forme(t, c) {
     this.taille=t;
     this.color=c;
 }
+
+function rectangle(coord, larg, haut){
+  forme.call(this, taille, color);
+
+  this.coord = coord;
+  this.larg = larg;
+  this.haut = haut;
+}
+rectangle.prototype = new forme();
+
+function ligne(point1,point2) {
+  forme.call(this, taille, color);
+
+  this.point1 = point1;
+  this.point2 = points2;
+}
+ligne.prototype = new forme();
